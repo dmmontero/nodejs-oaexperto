@@ -1,3 +1,3 @@
-let nombre = 'Fernado';
+let nombre = 'Danny';
 
 console.log(`Hola ${ nombre }`);
