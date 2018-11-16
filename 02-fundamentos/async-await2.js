@@ -49,7 +49,7 @@ let getInformacion = async(id) => {
     return `El salario de ${salario.nombre} es de ${salario.salario}$`;
 }
 
-getInformacion(2)
+getInformacion(3)
     .then(mensaje => console.log(mensaje))
     .catch((err) => console.log(err));
 
