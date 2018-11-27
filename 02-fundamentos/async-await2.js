@@ -43,11 +43,13 @@ let getSalario = async(empleado) => {
     };
 }
 
+
 let getInformacion = async(id) => {
     let empleado = await getEmpleado(id);
     let salario = await getSalario(empleado);
     return `El salario de ${salario.nombre} es de ${salario.salario}$`;
 }
+
 
 getInformacion(3)
     .then(mensaje => console.log(mensaje))
