@@ -12,6 +12,9 @@ if (true) {
 console.log(a); // 5
 console.log(b); // 1
 
+let x = async function() {}
+
+
 /*
 
 
