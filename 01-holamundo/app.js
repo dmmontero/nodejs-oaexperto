@@ -1,3 +1,2 @@
 let nombre = 'Danny';
-
-console.log(`Hola ${ nombre }`);
+console.log(`Hola ${nombre}`);
