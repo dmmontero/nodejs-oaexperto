@@ -2,6 +2,8 @@
 //     console.log('Hola mundo');
 // }, 3000);
 
+
+
 let getUsuarioById = (id, callback) => {
     let usuario = {
         nombre: 'Fernando',
@@ -16,7 +18,7 @@ let getUsuarioById = (id, callback) => {
 }
 
 
-getUsuarioById(20, (err, usuario) => {
+getUsuarioById(10, (err, usuario) => {
     if (err)
         return console.log(err);
 

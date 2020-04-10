@@ -3,6 +3,6 @@ function saludar(nombre) {
     return mensaje;
 }
 
-let saludo = saludar('Danny');
 
+let saludo = saludar('Danny');
 console.log(saludo);

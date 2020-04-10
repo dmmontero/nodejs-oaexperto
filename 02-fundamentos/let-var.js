@@ -1,3 +1,25 @@
+/*
+let nombre = 'Wolverine';
+
+if (true) {
+    let nombre = 'Magneto';
+}
+
+nombre = 'Wolverine1';
+nombre = 'Wolverine2';
+nombre = 'Wolverine3';
+nombre = 'Wolverine4';
+console.log(nombre);
+
+
+let index = 'Hola'; //..Ambito 1
+
+//Ambito 2
+for (let index = 0; index <= 5; index++) {
+    console.log(`i: ${index}`);
+}
+console.log(index);
+*/
 var a = 5;
 var b = 10;
 
@@ -12,26 +34,4 @@ if (true) {
 console.log(a); // 5
 console.log(b); // 1
 
-let x = async function() {}
-
-
-/*
-
-
-let nombre = 'Wolverine';
-
-if (true) {
-    let nombre = 'Magneto';
-}
-
-nombre = 'Wolverine1';
-nombre = 'Wolverine2';
-nombre = 'Wolverine3';
-nombre = 'Wolverine4';
-console.log(nombre);
-
-for (var index = 0; index <= 5; index++) {
-    console.log(`i: ${index}`);
-}
-
-*/
+let x = async function () {}
