@@ -35,28 +35,38 @@ let getEmpleado = (id) => {
 
 let getSalario = (empleado) => {
     return new Promise((resolve, reject) => {
-        let salarioDB = salarios.find(salario => salario.id === empleado.id);
+        let salarioBD = salarios.find(sal => sal.id === empleado.id);
 
-        if (!salarioDB)
-            reject(`No se encontró el salario para el usuario ${empleado.id}`);
-        else
+        if (!salarioBD) {
+            reject(`No se encontró un salario para el empleado ${empleado.nombre}`);
+        } else {
             resolve({
+                id: empleado.id,
                 nombre: empleado.nombre,
-                salario: salarioDB.salario
+                salario: salarioBD.salario
             });
+        }
     });
 }
 
-getEmpleado(2).then(empleado => {
+/*
+getEmpleado(1).then(empleado => {
     getSalario(empleado).then(resp => {
         console.log(`El salario de ${resp.nombre} es de ${resp.salario}$`);
     }, err => console.log(err));
 }, err => console.log(err));
+*/
 
-
-//Promesas encadenadas
-getEmpleado(1).then(empleado => {
+// Promesas encadenadas
+getEmpleado(3).then(empleado => {
     return getSalario(empleado);
 }).then(salario => {
     console.log(`El salario de ${salario.nombre} es de ${salario.salario}$`);
 }).catch(err => console.log(err));
+
+//Promesas encadenadas
+// getEmpleado(1).then(empleado => {
+//     return getSalario(empleado);
+// }).then(salario => {
+//     console.log(`El salario de ${salario.nombre} es de ${salario.salario}$`);
+// }).catch(err => console.log(err));

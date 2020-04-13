@@ -35,7 +35,7 @@ let getSalario = async(empleado) => {
     let salarioDB = salarios.find(salario => salario.id === empleado.id);
 
     if (!salarioDB)
-        throw new Error(`No se encontró el salario para el usuario ${empleado.id}`);
+        throw new Error(`No se encontró el salario para el usuario ${empleado.nombre}`);
 
     return {
         nombre: empleado.nombre,
