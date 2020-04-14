@@ -1,1 +1,14 @@
-[{"descripcion":"Caminar al trabajo","completado":false},{"descripcion":"Ir al gym","completado":true}]
+[
+ {
+  "descripcion": "Trabajo en casa",
+  "completado": false
+ },
+ {
+  "descripcion": "Pasear al perro",
+  "completado": false
+ },
+ {
+  "descripcion": "Ir al gym",
+  "completado": "true"
+ }
+]

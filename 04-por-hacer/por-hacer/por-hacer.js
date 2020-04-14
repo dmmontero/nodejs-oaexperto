@@ -1,10 +1,11 @@
 const fs = require('fs');
 
+//Arreglo de tareas por hacer
 let listadoPorHacer = [];
 
 const guardarDB = () => {
-    let data = JSON.stringify(listadoPorHacer);
-    fs.writeFile('db/data.json', data, (err) => {
+    let data = JSON.stringify(listadoPorHacer, null, 1);
+    fs.writeFile('db/data.json', data, 'utf8', (err) => {
         if (err) throw new Error('No se pudo guardar', err);
     });
 }
@@ -31,9 +32,16 @@ const crear = (descripcion) => {
     return porHacer
 }
 
-const getListado = () => {
+const listar = (completada = null) => {
     cargarDB();
-    return listadoPorHacer;
+    if (completada !== null) {
+        let filtrada = listadoPorHacer.filter(item => {
+            return item.completado.toString() === completada;
+        });
+        return filtrada;
+    } else {
+        return listadoPorHacer;
+    }
 }
 
 const actualizar = (descripcion, completado = true) => {
@@ -49,7 +57,7 @@ const actualizar = (descripcion, completado = true) => {
 }
 
 
-const borrar = (descripcion) => {
+const borrar = async(descripcion) => {
     cargarDB();
     let index = listadoPorHacer.findIndex(tarea => tarea.descripcion === descripcion);
 
@@ -58,13 +66,13 @@ const borrar = (descripcion) => {
         guardarDB();
         return true;
     } else
-        return false;
+        throw new Error(`Tarea no encontrada`);
 
 }
 
 module.exports = {
     crear,
-    getListado,
+    listar,
     actualizar,
     borrar
 }
